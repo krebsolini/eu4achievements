@@ -86,14 +86,14 @@ def parseArgs():
                         required=True, 
                         help='specify user to list achievements for (the id from the steamcommunity.com profile url)')
     parser.add_argument('-f', '--filter',
-                        choices=['completed', 'not-completed', 'very-easy', 'easy', 'medium', 'hard', 'very-hard', 'insane', 'uncategorized'
+                        choices=['completed', 'not-completed', 'very-easy', 'easy', 'medium', 'hard', 'very-hard', 'insane', 'uncategorized',
                                  'c', 'nc', 've', 'e', 'm', 'h', 'vh', 'i', 'uc'],
                         nargs='+',
                         help='filter achievements by specified criteria')
     parser.add_argument('-r', '--random', 
                         action='store_true',
                         default=False, 
-                        help='list random achievement')
+                        help='print only one random achievement')
     parser.add_argument('-l', '--link',
                         action='store_true',
                         default=False,
