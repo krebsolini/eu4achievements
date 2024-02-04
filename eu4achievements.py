@@ -62,7 +62,6 @@ def collectAchievementsDifficulty():
     soup = BeautifulSoup(page, features='lxml')
 
     achievements = []
-    # achievements = {}
 
     table = soup.body.find('table')
 
@@ -74,7 +73,6 @@ def collectAchievementsDifficulty():
         difficulty = e.text.strip().split('\n')[-1].strip()
         
         achievements.append({'title': title, 'difficulty': difficulty})
-        # achievements['title'] = difficulty
 
     return achievements
 
@@ -121,7 +119,6 @@ def formattedResult(achievement, link=None):
     
     except KeyError:
         logger.error(f'KeyError: {achievement}')
-        return f'KeyError: {achievement}'
 
 def main():
     args = parseArgs()
