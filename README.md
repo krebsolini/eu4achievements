@@ -1,20 +1,36 @@
 # eu4achievements
 
+### Disclaimer
 
-## Getting started
+- Won't work with private steam profile
+- `--link` flag hardly ever works properly
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+### Help
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/krebso/eu4achievements.git
-git branch -M main
-git push -uf origin main
+usage: eu4achievements.py [-h] -u USER
+                          [-f {completed,not-completed,very-easy,easy,medium,hard,very-hard,insane,uncategorizedc,nc,ve,e,m,h,vh,i,uc} [{...} ...]]
+                          [-r] [-l] [-v] [--no-output]
+
+options:
+  -h, --help            show this help message and exit
+
+  -u, --user USER       specify user to list achievements for (the id from the steamcommunity.com profile url)
+
+  -f, --filter {completed,not-completed,very-easy,easy,medium,hard,very-hard,insane,uncategorized,c,nc,ve,e,m,h,vh,i,uc} [{...} ...]
+                        filter achievements by specified criteria
+
+  -r, --random          print only one random achievement
+
+  -l, --link            print link to eu4.paradoxwikis.com for each achievement
+
+  -v, --verbose         enable verbose logging
+
+  --no-output           disable output
+```
+
+### Example 
+```
+$ eu4achievements.py -user "krebso" --filter not-completed easy medium hard --random
+[H] Great Moravia:
+|> Restore the Great Moravian borders as Nitra or Moravia.
 ```
